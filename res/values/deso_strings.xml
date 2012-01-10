@@ -72,7 +72,11 @@
 
     <!-- About phone screen, ROM versioning -->
     <string name="rom_buildtype_title">Rom Buildtype</string>
-    <string name="display_category_rom_versioning_title">Rom Build Information</string>
+    <string name="display_category_rom_versioning_title">Software build information</string>
     <string name="display_category_rom_versioning_summary">Software status of aosp version, kernel version, buildtype, etc</string>
+
+    <!-- About phone screen, Build date -->
+    <string name="build_date_title">Build date</string>
+    <string name="build_date_default">2012-01-01-0000</string>
 
 </resources>
