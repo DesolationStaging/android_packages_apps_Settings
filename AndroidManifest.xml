@@ -2112,6 +2112,19 @@
         <activity
              android:name=".desolation.CustomSettings" />
 
+        <activity android:name="Settings$NavigationSettings"
+            android:label="@string/navigation_settings_title"
+            android:taskAffinity="">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.slim.NavigationSettings" />
+        </activity>
+             
+        <activity android:name=".slim.NavigationSettings" />
+
         <provider
             android:name=".search.SettingsSearchIndexablesProvider"
             android:authorities="com.android.settings"
