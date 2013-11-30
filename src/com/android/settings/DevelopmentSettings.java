@@ -176,6 +176,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
     private static final String ADVANCED_REBOOT_KEY = "advanced_reboot";
 
+    private static final String DEVELOPMENT_SHORTCUT_KEY = "development_shortcut";
+
     private static final int RESULT_DEBUG_APP = 1000;
 
     private static final String PERSISTENT_DATA_BLOCK_PROP = "ro.frp.pst";
@@ -257,6 +259,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private Object mSelectedRootValue;
 
     private SwitchPreference mAdvancedReboot;
+    private SwitchPreference mDevelopmentShortcut;
 
     private final ArrayList<Preference> mAllPrefs = new ArrayList<Preference>();
 
@@ -331,6 +334,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         mPassword = (PreferenceScreen) findPreference(LOCAL_BACKUP_PASSWORD);
         mAllPrefs.add(mPassword);
         mAdvancedReboot = findAndInitSwitchPref(ADVANCED_REBOOT_KEY);
+        mDevelopmentShortcut = findAndInitSwitchPref(DEVELOPMENT_SHORTCUT_KEY);
 
         if (!android.os.Process.myUserHandle().equals(UserHandle.OWNER)) {
             disableForUser(mEnableAdb);
@@ -338,6 +342,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
             disableForUser(mEnableTerminal);
             disableForUser(mPassword);
             disableForUser(mAdvancedReboot);
+            disableForUser(mDevelopmentShortcut);
         }
 
         mDebugAppPref = findPreference(DEBUG_APP_KEY);
@@ -612,6 +617,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         updateUSBAudioOptions();
         updateRootAccessOptions();
         updateAdvancedRebootOptions();
+        updateDevelopmentShortcutOptions();
     }
 
     private void writeAdvancedRebootOptions() {
@@ -623,6 +629,22 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private void updateAdvancedRebootOptions() {
         updateSwitchPreference(mAdvancedReboot, Settings.Secure.getInt(
             getActivity().getContentResolver(), Settings.Secure.ADVANCED_REBOOT, 1) != 0);
+    }
+
+    private void resetDevelopmentShortcutOptions() {
+        Settings.Secure.putInt(getActivity().getContentResolver(),
+                Settings.Secure.DEVELOPMENT_SHORTCUT, 0);
+    }
+
+    private void writeDevelopmentShortcutOptions() {
+        Settings.Secure.putInt(getActivity().getContentResolver(),
+                Settings.Secure.DEVELOPMENT_SHORTCUT,
+                mDevelopmentShortcut.isChecked() ? 1 : 0);
+    }
+
+    private void updateDevelopmentShortcutOptions() {
+        updateSwitchPreference(mDevelopmentShortcut, Settings.Secure.getInt(
+            getActivity().getContentResolver(), Settings.Secure.DEVELOPMENT_SHORTCUT, 0) != 0);
     }
 
     private void updateAdbOverNetwork() {
@@ -667,6 +689,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         resetRootAccessOptions();
         resetAdbNotifyOptions();
         resetVerifyAppsOverUsbOptions();
+        resetDevelopmentShortcutOptions();
         writeAnimationScaleOption(0, mWindowAnimationScale, null);
         writeAnimationScaleOption(1, mTransitionAnimationScale, null);
         writeAnimationScaleOption(2, mAnimatorDurationScale, null);
@@ -1626,6 +1649,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
             writeKillAppLongpressBackOptions();
         } else if (preference == mAdvancedReboot) {
             writeAdvancedRebootOptions();
+        } else if (preference == mDevelopmentShortcut) {
+            writeDevelopmentShortcutOptions();
         } else {
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
