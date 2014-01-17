@@ -79,4 +79,7 @@
     <string name="build_date_title">Build date</string>
     <string name="build_date_default">2012-01-01-0000</string>
 
+    <!-- SuperSU header name -->
+    <string name="supersu_title">Superuser</string>
+
 </resources>
