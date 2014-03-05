@@ -26,11 +26,17 @@
     <string name="dlg_reset_android">Android</string>
     <string name="dlg_reset_desolation">Desolation</string>
 
-    <!-- Dashboard header -->
+    <!-- Dashboard Header -->
     <string name="header_category_personalization">Personalization</string>
 
-    <!-- Desolation Custom settings -->
+    <!-- Desolation Core -->
     <string name="desolation_custom_title">Desolated Core</string>
+
+    <!-- BitSyko Layers  -->
+    <string name="bitsyko_layers_str">BitSyko Layers</string>
+
+    <!-- SuperSU Header -->
+    <string name="supersu_title">SuperSU</string>
 
     <!-- Wakeup options -->
     <string name="display_category_wakeup_options_title">Wakeup options</string>
@@ -169,9 +175,6 @@
     <string name="notification_light_missed_call_title">Missed call</string>
     <string name="notification_light_voicemail_title">Voicemail</string>
 
-    <!-- BitSyko Layers  -->
-    <string name="bitsyko_layers_str">Layers</string>
-
     <!-- Battery styles -->
     <string name="battery_styles_settings_title">Battery styles</string>
     <string name="battery_styles_settings_summary">Change the battery icon and text style</string>
@@ -269,5 +272,9 @@
     <string name="show_enter_key_summary">Force keyboard to show enter instead of emoticon key</string>
     <string name="ime_switcher_notify">Selector notification</string>
     <string name="ime_switcher_notify_summary">Display input method selector notification</string>
+
+    <!-- USB settings -->
+    <string name="usb_charging_title">Charging</string>
+    <string name="usb_charging_summary">Lets you disable all data and file transfer connection with computer and put device in charging only mode.</string>
 
 </resources>
