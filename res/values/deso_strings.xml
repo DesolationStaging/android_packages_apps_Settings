@@ -242,4 +242,8 @@
     <string name="clock_use_second">Use second clock</string>
     <string name="clock_use_second_summary">Show second in clock</string>
 
+    <!-- Volume button music controls -->
+    <string name="volbtn_music_controls_title">Playback control</string>
+    <string name="volbtn_music_controls_summary">When the screen is off, long pressing the volume keys will seek music tracks</string>
+
 </resources>
