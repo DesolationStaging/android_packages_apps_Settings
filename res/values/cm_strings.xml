@@ -110,11 +110,6 @@
     <!-- Bluetooth settings.  A checkbox to set if we should accept all the file types regardless of their presence in MIME type whitelist -->
     <string name="bluetooth_accept_all_files">Accept all file types</string>
 
-    <!-- Title of dialog asking user to confirm before enabling UMS. [CHAR LIMIT=48] -->
-    <string name="usb_settings_enable_ums_title">Enable mass storage?</string>
-    <!-- Message of dialog asking user to confirm before enabling UMS. [CHAR LIMIT=NONE] -->
-    <string name="usb_settings_enable_ums_message">System components and apps rely on primary storage always being available. This feature breaks that functionality. It is strongly recommended to use MTP instead. Are you sure you want to enable mass storage?</string>
-
     <!-- External storage -->
     <string name="external_storage_turn_on">External storage has been turned on</string>
     <string name="external_storage_turn_off">External storage has been turned off</string>
