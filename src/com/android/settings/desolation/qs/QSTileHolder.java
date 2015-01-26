@@ -109,21 +109,10 @@ public class QSTileHolder {
                 resourceName = "ic_qs_network_adb_on";
                 stringId = R.string.qs_tile_adb_over_network;
                 break;
-<<<<<<< HEAD:src/com/android/settings/desolation/qs/QSTileHolder.java
-=======
             case QSConstants.TILE_LTE:
                 resourceName = "ic_qs_lte_on";
                 stringId = R.string.qs_tile_lte;
                 break;
-            case QSConstants.TILE_PROFILES:
-                resourceName = "ic_qs_system_profiles";
-                stringId = R.string.qs_tile_profiles;
-                break;
-            case QSConstants.TILE_PERFORMANCE:
-                resourceName = "ic_qs_perf_profile_highperf_avd";
-                stringId = R.string.qs_tile_performance;
-                break;
->>>>>>> 2bbe6e0... Settings: Add LteTile.:src/com/android/settings/cyanogenmod/qs/QSTileHolder.java
             case QSConstants.TILE_NFC:
                 resourceName = "ic_qs_nfc_on";
                 stringId = R.string.qs_tile_nfc;
@@ -135,6 +124,10 @@ public class QSTileHolder {
             case QSConstants.TILE_LOCKSCREEN:
                 resourceName = "ic_qs_lock_screen_on";
                 stringId = R.string.qs_tile_lockscreen;
+                break;
+            case QSConstants.TILE_VISUALIZER:
+                resourceName = "ic_qs_visualizer_static";
+                stringId = R.string.qs_tile_visualizer;
                 break;
             default:
                 return null;
