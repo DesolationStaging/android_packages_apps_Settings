@@ -232,4 +232,7 @@
     <string name="display_rotation_180_title">180 degrees</string>
     <string name="display_rotation_270_title">270 degrees</string>
 
+    <!-- Layers Manager -->
+    <string name="layers_manager_title">Layers Manager</string>
+
 </resources>
