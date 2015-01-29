@@ -165,4 +165,6 @@
     <string name="notification_light_missed_call_title">Missed call</string>
     <string name="notification_light_voicemail_title">Voicemail</string>
 
+    <!-- BitSyko Layers  -->
+    <string name="bitsyko_layers_str">Layers</string>
 </resources>
