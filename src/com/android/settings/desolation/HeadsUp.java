@@ -23,14 +23,18 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.UserHandle;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceGroup;
 import android.preference.SwitchPreference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.Gravity;
@@ -42,12 +46,12 @@ import android.widget.ListView;
 import android.widget.Switch;
 
 import com.android.settings.R;
-import com.android.settings.SettingsActivity;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
-import com.android.settings.desolation.BaseSystemSettingSwitchBar;
 import com.android.settings.desolation.PackageListAdapter;
 import com.android.settings.desolation.PackageListAdapter.PackageItem;
+import com.android.settings.SettingsActivity;
+import com.android.settings.desolation.BaseSystemSettingSwitchBar;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -56,7 +60,8 @@ import java.util.Map;
 
 public class HeadsUp extends SettingsPreferenceFragment
         implements BaseSystemSettingSwitchBar.SwitchBarChangeCallback,
-                AdapterView.OnItemLongClickListener, Preference.OnPreferenceClickListener {
+                AdapterView.OnItemLongClickListener, Preference.OnPreferenceClickListener,
+                            OnPreferenceChangeListener {
 
     private static final int DIALOG_DND_APPS = 0;
     private static final int DIALOG_BLACKLIST_APPS = 1;
@@ -458,7 +463,6 @@ public class HeadsUp extends SettingsPreferenceFragment
         if (mAddDndPref == pref || mAddBlacklistPref == pref) {
             return false;
         }
-
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())
                 .setTitle(R.string.dialog_delete_title)
