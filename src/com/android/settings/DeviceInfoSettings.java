@@ -86,7 +86,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_DEVICE_REAR_CAMERA = "device_rear_camera";
     private static final String KEY_DEVICE_FRONT_CAMERA = "device_front_camera";
     private static final String KEY_DEVICE_SCREEN_RESOLUTION = "device_screen_resolution";
-    private static final String KEY_PLAIN_VERSION = "plain_version";
+    private static final String KEY_DESO_VERSION = "deso_version";
     private static final String KEY_ROM_BUILDTYPE = "rom_buildtype";
     private static final String KEY_MOD_BUILD_DATE = "build_date";
 
@@ -112,7 +112,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         setValueSummary(KEY_BUILD_NUMBER, "ro.build.id");
         findPreference(KEY_BUILD_NUMBER).setEnabled(true);
         findPreference(KEY_KERNEL_VERSION).setSummary(getFormattedKernelVersion());
-        setValueSummary(KEY_PLAIN_VERSION, "ro.plain.version");
+        setValueSummary(KEY_DESO_VERSION, "ro.deso.version");
         setValueSummary(KEY_ROM_BUILDTYPE, "rom.buildtype");
         setValueSummary(KEY_MOD_BUILD_DATE, "ro.build.date");
 

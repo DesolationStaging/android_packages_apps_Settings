@@ -161,10 +161,10 @@
                 android:targetClass="com.android.settings.orbix.ChangeLog" />
         </PreferenceScreen>
 
-        <Preference android:key="plain_version"
+        <Preference android:key="deso_version"
                 style="?android:preferenceInformationStyle"
-                android:title="@string/plain_version_title"
-                android:summary="@string/plain_version_default"/>
+                android:title="@string/deso_version_title"
+                android:summary="@string/deso_version_default"/>
 
         <!-- Build date -->
         <Preference android:key="build_date"
