@@ -175,7 +175,7 @@
         <Preference android:key="rom_buildtype"
                 style="?android:preferenceInformationStyle"
                 android:title="@string/rom_buildtype_title"
-                android:summary="@string/plain_version_default"/>
+                android:summary="@string/deso_version_default"/>
 
         <!-- Detailed build version -->
         <Preference android:key="build_number"
