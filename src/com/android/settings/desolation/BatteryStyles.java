@@ -63,7 +63,7 @@ public class BatteryStyles extends SettingsPreferenceFragment
             "battery_styles_text_color";
 
     private static final int DEFAULT_BATTERY_COLOR = 0xffffffff;
-    private static final int DEFAULT_TEXT_COLOR = 0xff000000;
+    private static final int DEFAULT_TEXT_COLOR = 0xffffffff;
 
     private static final int MENU_RESET = Menu.FIRST;
     private static final int DLG_RESET = 0;
@@ -231,30 +231,26 @@ public class BatteryStyles extends SettingsPreferenceFragment
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        int intValue;
-        int index;
-        int intHex;
-        String hex;
 
         if (preference == mStyle) {
-            intValue = Integer.valueOf((String) newValue);
-            index = mStyle.findIndexOfValue((String) newValue);
+            int intValue = Integer.valueOf((String) newValue);
+            int index = mStyle.findIndexOfValue((String) newValue);
             Settings.System.putInt(mResolver,
                 Settings.System.STATUS_BAR_BATTERY_STATUS_STYLE, intValue);
             mStyle.setSummary(mStyle.getEntries()[index]);
             refreshSettings();
             return true;
         } else if (preference == mPercentStyle) {
-            intValue = Integer.valueOf((String) newValue);
-            index = mPercentStyle.findIndexOfValue((String) newValue);
+            int intValue = Integer.valueOf((String) newValue);
+            int index = mPercentStyle.findIndexOfValue((String) newValue);
             Settings.System.putInt(mResolver,
                 Settings.System.STATUS_BAR_BATTERY_STATUS_PERCENT_STYLE, intValue);
             mPercentStyle.setSummary(mPercentStyle.getEntries()[index]);
             refreshSettings();
             return true;
         } else if (preference == mChargeAnimationSpeed) {
-            intValue = Integer.valueOf((String) newValue);
-            index = mChargeAnimationSpeed.findIndexOfValue((String) newValue);
+            int intValue = Integer.valueOf((String) newValue);
+            int index = mChargeAnimationSpeed.findIndexOfValue((String) newValue);
             Settings.System.putInt(mResolver,
                 Settings.System.STATUS_BAR_BATTERY_STATUS_CHARGING_ANIMATION_SPEED, intValue);
             mChargeAnimationSpeed.setSummary(mChargeAnimationSpeed.getEntries()[index]);
@@ -267,35 +263,36 @@ public class BatteryStyles extends SettingsPreferenceFragment
             refreshSettings();
             return true;
         } else if (preference == mCircleDotLength) {
-            intValue = Integer.valueOf((String) newValue);
-            index = mCircleDotLength.findIndexOfValue((String) newValue);
+            int intValue = Integer.valueOf((String) newValue);
+            int index = mCircleDotLength.findIndexOfValue((String) newValue);
             Settings.System.putInt(mResolver,
                 Settings.System.STATUS_BAR_BATTERY_STATUS_CIRCLE_DOT_LENGTH, intValue);
             mCircleDotLength.setSummary(mCircleDotLength.getEntries()[index]);
             return true;
         } else if (preference == mCircleDotInterval) {
-            intValue = Integer.valueOf((String) newValue);
-            index = mCircleDotInterval.findIndexOfValue((String) newValue);
+            int intValue = Integer.valueOf((String) newValue);
+            int index = mCircleDotInterval.findIndexOfValue((String) newValue);
             Settings.System.putInt(mResolver,
                 Settings.System.STATUS_BAR_BATTERY_STATUS_CIRCLE_DOT_INTERVAL, intValue);
             mCircleDotInterval.setSummary(mCircleDotInterval.getEntries()[index]);
             return true;
         } else if (preference == mBatteryColor) {
-            hex = ColorPickerPreference.convertToARGB(
+            String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
-            intHex = ColorPickerPreference.convertToColorInt(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            preference.setSummary(hex);
             Settings.System.putInt(mResolver,
                     Settings.System.STATUS_BAR_BATTERY_STATUS_COLOR,
                     intHex);
-            preference.setSummary(hex);
             return true;
         } else if (preference == mTextColor) {
-            hex = ColorPickerPreference.convertToARGB(
+            String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
-            intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(mResolver,
-                    Settings.System.STATUS_BAR_BATTERY_STATUS_TEXT_COLOR, intHex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
             preference.setSummary(hex);
+            Settings.System.putInt(mResolver,
+                    Settings.System.STATUS_BAR_BATTERY_STATUS_TEXT_COLOR,
+                    intHex);
             return true;
         }
         return false;

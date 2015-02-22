@@ -20,6 +20,7 @@
     <string name="add">Add</string>
     <string name="reset">Reset</string>
     <string name="colors_title">Colors</string>
+    <string name="default_string">Default</string>
     <string name="choose_app">Choose application</string>
     <string name="dlg_reset_values_message">Reset values to defaults?</string>
     <string name="dlg_reset_android">Android</string>
@@ -174,7 +175,7 @@
 
     <!-- Battery styles -->
     <string name="battery_styles_settings_title">Battery styles</string>
-    <string name="battery_styles_settings_summary">Customize the battery status</string>
+    <string name="battery_styles_settings_summary">Change the battery icon and text style</string>
     <string name="battery_styles_cat_circle_options_title">Customize the circle</string>
     <string name="battery_styles_style_title">Indicator</string>
     <string name="battery_styles_style_icon_portrait">Icon portrait</string>
@@ -200,8 +201,8 @@
     <string name="battery_styles_text_color_title">Text</string>
 
     <!-- Clock and date -->
-    <string name="clock_styles_settings_title">Clock and date</string>
-    <string name="clock_styles_settings_summary">Clock and date style</string>
+    <string name="clock_styles_settings_title">Clock and date</string>  
+    <string name="clock_styles_settings_summary">Customize clock styles and date format</string>
     <string name="clock_title_enable">Alignment</string>
     <string name="clock_enabled">Enabled</string>
     <string name="clock_disabled">Disabled</string>
@@ -214,6 +215,7 @@
     <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
     <string name="right_clock">Right clock</string>
     <string name="center_clock">Center clock</string>
+    <string name="left_clock">Left clock</string>
     <string name="dont_show">Don\'t show</string>
     <string name="clock_date_display">Date</string>
     <string name="clock_date_display_summary">Display custom date before the clock</string>
