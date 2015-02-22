@@ -51,6 +51,8 @@ import java.util.Date;
 public class ClockStyles extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
 
+    private static final String TAG = "ClockStyles";
+
     private static final String PREF_ENABLE = "clock_styles";
     private static final String PREF_FONT_STYLE = "font_style";
     private static final String PREF_AM_PM_STYLE = "status_bar_am_pm";
