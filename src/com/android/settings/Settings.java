@@ -101,6 +101,6 @@ public class Settings extends SettingsActivity {
 
     public static class TopLevelSettings extends SettingsActivity { /* empty */ }
     public static class ApnSettingsActivity extends SettingsActivity { /* empty */ }
-    public static class PlainTweakInfo extends SettingsActivity { /* empty */ }
+    public static class CustomSettingsActivity extends SettingsActivity { /* empty */ }
 }
 
