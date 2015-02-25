@@ -113,4 +113,8 @@
     <string name="set">Set</string>
     <string name="color_default">Default</string>
 
+    <!-- Desolation Custom Settings -->
+    <string name="desolation_custom_title">Desolated Core</string>
+    <string name="header_category_personalization">Personalization</string>
+
 </resources>
