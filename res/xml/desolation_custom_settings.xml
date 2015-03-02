@@ -16,4 +16,9 @@
     android:title="@string/desolation_custom_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <Preference
+            android:key="main_activity"
+            android:enabled="false"
+            android:title="@string/main_activity_title"/>
+
 </PreferenceScreen>

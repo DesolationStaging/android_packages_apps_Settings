@@ -167,4 +167,7 @@
 
     <!-- BitSyko Layers  -->
     <string name="bitsyko_layers_str">Layers</string>
+
+	<!-- Custom Settings -->
+	<string name="main_activity_title">Placeholder for now!</string>
 </resources>

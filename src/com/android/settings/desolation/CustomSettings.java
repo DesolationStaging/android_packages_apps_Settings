@@ -15,16 +15,21 @@
  */
 package com.android.settings.desolation;
 
-import android.os.Bundle;
+import android.content.ContentResolver;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.os.Bundle;
 import android.preference.Preference;
+import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
 
-import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
 
-public class CustomSettings extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener {
+public class CustomSettings extends SettingsPreferenceFragment implements OnSharedPreferenceChangeListener {
 
     private static final String TAG = "CustomSettings";
 
@@ -32,14 +37,23 @@ public class CustomSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.desolation_custom_settings);
+        PreferenceScreen prefSet = getPreferenceScreen();
+        PackageManager pm = getPackageManager();
     }
 
     @Override
     public void onResume() {
         super.onResume();
     }
-
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-        return false;
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences preferences, String key) {
+    }
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+		return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 }
