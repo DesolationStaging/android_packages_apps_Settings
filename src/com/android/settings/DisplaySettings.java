@@ -152,7 +152,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mDozeTimeout.multiplyValue(100);
             mDozeTimeout.setOnPreferenceChangeListener(this);
         } else {
-            prefSet.removePreference(mDozeCategory);
+            removePreference(mDozeCategory);
         }
 
         if (RotationPolicy.isRotationLockToggleVisible(activity)) {
