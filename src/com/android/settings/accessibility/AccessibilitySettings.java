@@ -82,13 +82,6 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
             "toggle_high_text_contrast_preference";
     private static final String TOGGLE_INVERSION_PREFERENCE =
             "toggle_inversion_preference";
-<<<<<<< HEAD
-    private static final String TOGGLE_POWER_BUTTON_ENDS_CALL_PREFERENCE =
-            "toggle_power_button_ends_call_preference";
-    private static final String TOGGLE_LOCK_SCREEN_ROTATION_PREFERENCE =
-            "toggle_lock_screen_rotation_preference";
-=======
->>>>>>> 4909742... Settings: Remove screen rotation from accessibility
     private static final String TOGGLE_SPEAK_PASSWORD_PREFERENCE =
             "toggle_speak_password_preference";
     private static final String SELECT_LONG_PRESS_TIMEOUT_PREFERENCE =
@@ -165,13 +158,13 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
     };
 
     private final SettingsContentObserver mSettingsContentObserver =
-        new SettingsContentObserver(mHandler) {
-        @Override
-        public void onChange(boolean selfChange, Uri uri) {
-            loadInstalledServices();
-            updateServicesPreferences();
-        }
-    };
+            new SettingsContentObserver(mHandler) {
+                @Override
+                public void onChange(boolean selfChange, Uri uri) {
+                    loadInstalledServices();
+                    updateServicesPreferences();
+                }
+            };
 
     // Preference controls.
     private PreferenceCategory mServicesCategory;
@@ -232,12 +225,6 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
         } else if (mToggleHighTextContrastPreference == preference) {
             handleToggleTextContrastPreferenceChange((Boolean) newValue);
             return true;
-        } else if (mTogglePowerButtonEndsCallPreference == preference) {
-            handleTogglePowerButtonEndsCallPreferenceChange((Boolean) newValue);
-            return true;
-        } else if (mToggleLockScreenRotationPreference == preference) {
-            handleLockScreenRotationPreferenceChange((Boolean) newValue);
-            return true;
         } else if (mToggleSpeakPasswordPreference == preference) {
             handleToggleSpeakPasswordPreferenceChange((Boolean) newValue);
             return true;
@@ -259,9 +246,6 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-<<<<<<< HEAD
-        if (mGlobalGesturePreferenceScreen == preference) {
-=======
         if (mToggleLargeTextPreference == preference) {
             handleToggleLargeTextPreferenceClick();
             return true;
@@ -272,7 +256,6 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
             handleToggleSpeakPasswordPreferenceClick();
             return true;
         } else if (mGlobalGesturePreferenceScreen == preference) {
->>>>>>> 4909742... Settings: Remove screen rotation from accessibility
             handleToggleEnableAccessibilityGesturePreferenceClick();
             return true;
         } else if (mDisplayMagnificationPreferenceScreen == preference) {
@@ -282,41 +265,25 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
-    private void handleToggleLargeTextPreferenceChange(boolean checked) {
+    private void handleToggleLargeTextPreferenceClick() {
         try {
-            mCurConfig.fontScale = checked ? LARGE_FONT_SCALE : 1;
+            mCurConfig.fontScale = mToggleLargeTextPreference.isChecked() ? LARGE_FONT_SCALE : 1;
             ActivityManagerNative.getDefault().updatePersistentConfiguration(mCurConfig);
         } catch (RemoteException re) {
             /* ignore */
         }
     }
 
-    private void handleToggleTextContrastPreferenceChange(boolean checked) {
+    private void handleToggleTextContrastPreferenceClick() {
         Settings.Secure.putInt(getContentResolver(),
                 Settings.Secure.ACCESSIBILITY_HIGH_TEXT_CONTRAST_ENABLED,
-                (checked ? 1 : 0));
+                (mToggleHighTextContrastPreference.isChecked() ? 1 : 0));
     }
 
-    private void handleTogglePowerButtonEndsCallPreferenceChange(boolean checked) {
-        Settings.Secure.putInt(getContentResolver(),
-                Settings.Secure.INCALL_POWER_BUTTON_BEHAVIOR,
-                (checked ? Settings.Secure.INCALL_POWER_BUTTON_BEHAVIOR_HANGUP
-                        : Settings.Secure.INCALL_POWER_BUTTON_BEHAVIOR_SCREEN_OFF));
-    }
-
-<<<<<<< HEAD
-    private void handleLockScreenRotationPreferenceChange(boolean checked) {
-        RotationPolicy.setRotationLockForAccessibility(getActivity(),
-                !checked);
-    }
-
-    private void handleToggleSpeakPasswordPreferenceChange(boolean checked) {
-=======
     private void handleToggleSpeakPasswordPreferenceClick() {
->>>>>>> 4909742... Settings: Remove screen rotation from accessibility
         Settings.Secure.putInt(getContentResolver(),
                 Settings.Secure.ACCESSIBILITY_SPEAK_PASSWORD,
-                checked ? 1 : 0);
+                mToggleSpeakPasswordPreference.isChecked() ? 1 : 0);
     }
 
     private void handleToggleEnableAccessibilityGesturePreferenceClick() {
@@ -359,28 +326,6 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
         mToggleInversionPreference = (SwitchPreference) findPreference(TOGGLE_INVERSION_PREFERENCE);
         mToggleInversionPreference.setOnPreferenceChangeListener(this);
 
-<<<<<<< HEAD
-        // Power button ends calls.
-        mTogglePowerButtonEndsCallPreference =
-                (SwitchPreference) findPreference(TOGGLE_POWER_BUTTON_ENDS_CALL_PREFERENCE);
-        if (!KeyCharacterMap.deviceHasKey(KeyEvent.KEYCODE_POWER)
-                || !Utils.isVoiceCapable(getActivity())) {
-            mSystemsCategory.removePreference(mTogglePowerButtonEndsCallPreference);
-        } else {
-            mTogglePowerButtonEndsCallPreference.setOnPreferenceChangeListener(this);
-        }
-
-        // Lock screen rotation.
-        mToggleLockScreenRotationPreference =
-                (SwitchPreference) findPreference(TOGGLE_LOCK_SCREEN_ROTATION_PREFERENCE);
-        if (!RotationPolicy.isRotationSupported(getActivity())) {
-            mSystemsCategory.removePreference(mToggleLockScreenRotationPreference);
-        } else {
-            mToggleLockScreenRotationPreference.setOnPreferenceChangeListener(this);
-        }
-
-=======
->>>>>>> 4909742... Settings: Remove screen rotation from accessibility
         // Speak passwords.
         mToggleSpeakPasswordPreference =
                 (SwitchPreference) findPreference(TOGGLE_SPEAK_PASSWORD_PREFERENCE);
