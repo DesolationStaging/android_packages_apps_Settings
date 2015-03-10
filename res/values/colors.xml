@@ -80,4 +80,8 @@
     <color name="wifi_divider">#ffe0e0e0</color>
     <color name="sim_noitification">@*android:color/material_deep_teal_500</color>
 
+    <!-- Color picker -->
+    <dimen name="color_swatch_size">16dp</dimen>
+    <dimen name="color_swatch_stroke_width">4dp</dimen>
+
 </resources>
