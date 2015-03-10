@@ -536,7 +536,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         updateSwitchPref(mEnableAdb, Settings.Global.getInt(cr,
                 Settings.Global.ADB_ENABLED, 0) != 0);
 
-        updateSwitchPref(mAdbNotify, Settings.Secuire.getInt(cr,
+        updateSwitchPref(mAdbNotify, Settings.Secure.getInt(cr,
                 Settings.Secure.ADB_NOTIFY, 1) != 0);
 
         updateAdbOverNetwork();
