@@ -76,7 +76,7 @@
             android:id="@+id/device_personalization"
             android:title="@string/header_category_personalization" >
 
-        <!-- Desolation Settings -->
+        <!-- Desolated Core -->
         <dashboard-tile
                 android:id="@+id/desolation_custom_settings"
                 android:title="@string/desolation_custom_title"
@@ -84,11 +84,11 @@
                 android:icon="@drawable/ic_desolation_settings"
                 />
 
-        <!-- BitSyko Layers App -->
+        <!-- Layers Manager -->
         <dashboard-tile
                 android:id="@+id/bitsyko_layers"
                 android:icon="@drawable/ic_bitsyko_layers"
-                android:title="@string/bitsyko_layers_str">     
+                android:title="@string/layers_manager_title">     
             <intent
                 android:action="android.intent.action.MAIN"
                 android:targetPackage="com.lovejoy777.rroandlayersmanager"
@@ -260,11 +260,11 @@
                 android:icon="@drawable/ic_settings_development"
                 />
 
-        <!-- SuperSU -->
+        <!-- Superuser -->
         <dashboard-tile
             android:id="@+id/supersu_settings"
             android:icon="@drawable/ic_settings_supersu"
-            android:title="@string/supersu_title">
+            android:title="@string/superuser_title">
             <intent
                 android:action="android.intent.action.MAIN"
                 android:targetPackage="eu.chainfire.supersu"

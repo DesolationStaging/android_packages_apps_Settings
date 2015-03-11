@@ -28,16 +28,16 @@
     <string name="dlg_reset_desolation">Desolation</string>
 
     <!-- Dashboard Header -->
-    <string name="header_category_personalization">Personalization</string>
+    <string name="header_category_personalization">Personalize</string>
 
     <!-- Desolation Core -->
     <string name="desolation_custom_title">Desolated Core</string>
 
-    <!-- BitSyko Layers  -->
-    <string name="bitsyko_layers_str">BitSyko Layers</string>
+    <!-- Layers Manager -->
+    <string name="layers_manager_title">Layers Manager</string>
 
-    <!-- SuperSU Header -->
-    <string name="supersu_title">SuperSU</string>
+    <!-- Superuser Header -->
+    <string name="superuser_title">Superuser</string>
 
     <!-- Wakeup options -->
     <string name="display_category_wakeup_options_title">Wakeup options</string>
