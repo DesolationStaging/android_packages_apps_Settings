@@ -357,10 +357,12 @@ public class SecuritySettings extends SettingsPreferenceFragment
         if (!um.hasUserRestriction(UserManager.DISALLOW_CONFIG_CREDENTIALS)) {
             Preference credentialStorageType = root.findPreference(KEY_CREDENTIAL_STORAGE_TYPE);
 
-            final int storageSummaryRes =
-                mKeyStore.isHardwareBacked() ? R.string.credential_storage_type_hardware
-                        : R.string.credential_storage_type_software;
-            credentialStorageType.setSummary(storageSummaryRes);
+            if (mKeyStore != null) {
+	            final int storageSummaryRes =
+	                mKeyStore.isHardwareBacked() ? R.string.credential_storage_type_hardware
+	                        : R.string.credential_storage_type_software;
+	            credentialStorageType.setSummary(storageSummaryRes);
+            }
         } else {
             PreferenceGroup credentialsManager = (PreferenceGroup)
                     root.findPreference(KEY_CREDENTIALS_MANAGER);
@@ -623,7 +625,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
                     Settings.System.TEXT_SHOW_PASSWORD, 1) != 0);
         }
 
-        if (mResetCredentials != null) {
+        if (mResetCredentials != null && mKeyStore != null) {
             mResetCredentials.setEnabled(!mKeyStore.isEmpty());
         }
     }
@@ -843,14 +845,16 @@ public class SecuritySettings extends SettingsPreferenceFragment
             if (!um.hasUserRestriction(UserManager.DISALLOW_CONFIG_CREDENTIALS)) {
                 KeyStore keyStore = KeyStore.getInstance();
 
-                final int storageSummaryRes = keyStore.isHardwareBacked() ?
-                        R.string.credential_storage_type_hardware :
-                        R.string.credential_storage_type_software;
+                if (keyStore != null) {
+	                final int storageSummaryRes = keyStore.isHardwareBacked() ?
+	                        R.string.credential_storage_type_hardware :
+	                        R.string.credential_storage_type_software;
 
-                data = new SearchIndexableRaw(context);
-                data.title = res.getString(storageSummaryRes);
-                data.screenTitle = screenTitle;
-                result.add(data);
+	                data = new SearchIndexableRaw(context);
+                    data.title = res.getString(storageSummaryRes);
+                    data.screenTitle = screenTitle;
+                    result.add(data);
+                }
             }
 
             // Advanced
