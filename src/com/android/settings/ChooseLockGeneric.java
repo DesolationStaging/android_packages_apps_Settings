@@ -279,7 +279,7 @@ public class ChooseLockGeneric extends SettingsActivity {
         }
 
         private int upgradeQualityForKeyStore(int quality) {
-            if (!mKeyStore.isEmpty()) {
+            if (mKeyStore != null) {
                 if (quality < CredentialStorage.MIN_PASSWORD_QUALITY) {
                     quality = CredentialStorage.MIN_PASSWORD_QUALITY;
                 }
