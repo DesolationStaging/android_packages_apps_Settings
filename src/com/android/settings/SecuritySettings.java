@@ -225,9 +225,6 @@ public class SecuritySettings extends SettingsPreferenceFragment
         // Add package manager to check if features are available
         PackageManager pm = getActivity().getPackageManager();
 
-        // Add package manager to check if features are available
-        PackageManager pm = getPackageManager();
-
         // Add options for lock/unlock screen
         final int resid = getResIdForLockUnlockScreen(getActivity(), mLockPatternUtils);
         addPreferencesFromResource(resid);

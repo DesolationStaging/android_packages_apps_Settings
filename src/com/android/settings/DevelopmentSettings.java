@@ -563,7 +563,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
                     context.getPackageManager().getApplicationEnabledSetting(TERMINAL_APP_PACKAGE)
                             == PackageManager.COMPONENT_ENABLED_STATE_ENABLED);
         }
-        updateSwitchPref(mKeepScreenOn, Settings.Global.getInt(cr,
+        updateSwitchPreference(mKeepScreenOn, Settings.Global.getInt(cr,
                 Settings.Global.STAY_ON_WHILE_PLUGGED_IN, 0) != 0);
         updateSwitchPreference(mBtHciSnoopLog, Settings.Secure.getInt(cr,
                 Settings.Secure.BLUETOOTH_HCI_LOG, 0) != 0);
@@ -1730,7 +1730,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
                         Settings.Global.ADB_ENABLED, 1);
                 mVerifyAppsOverUsb.setEnabled(true);
                 updateVerifyAppsOverUsbOptions();
-                updateBugreportOptions();
             }
         } else if (dialog == mAdbTcpDialog) {
             if (which == DialogInterface.BUTTON_POSITIVE) {
