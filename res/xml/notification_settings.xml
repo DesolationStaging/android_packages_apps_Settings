@@ -48,7 +48,7 @@
                 android:title="@string/increasing_ring_volume_option_title" />
 
         <!-- Increasing ring volume -->
-        <com.android.settings.desolation.IncreasingRingVolumePreference
+        <com.android.settings.notification.IncreasingRingVolumePreference
                 android:key="increasing_ring_volume"
                 android:icon="@drawable/ring_notif_increasing"
                 android:dependency="increasing_ring" />
