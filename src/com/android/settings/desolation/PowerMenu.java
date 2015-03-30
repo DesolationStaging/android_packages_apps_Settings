@@ -41,7 +41,7 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PowerMenuActions extends SettingsPreferenceFragment {
+public class PowerMenu extends SettingsPreferenceFragment {
     final static String TAG = "PowerMenuActions";
 
     private SwitchPreference mRebootPref;
@@ -62,7 +62,7 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.power_menu_settings);
+        addPreferencesFromResource(R.xml.power_menu);
         mContext = getActivity().getApplicationContext();
 
         mAvailableActions = getActivity().getResources().getStringArray(
