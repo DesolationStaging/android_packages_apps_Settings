@@ -22,7 +22,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.desolation.qs.QSTiles;
 
-public class NotificationDrawerSettings extends SettingsPreferenceFragment {
+public class NotificationDrawer extends SettingsPreferenceFragment {
     private Preference mQSTiles;
 
     @Override
