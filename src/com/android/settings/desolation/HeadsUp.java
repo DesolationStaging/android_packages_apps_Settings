@@ -152,7 +152,7 @@ public class HeadsUp extends SettingsPreferenceFragment
         super.onStart();
         final SettingsActivity activity = (SettingsActivity) getActivity();
         mEnabledSwitch = new BaseSystemSettingSwitchBar(activity, activity.getSwitchBar(),
-                Settings.System.HEADS_UP_NOTIFICATION, false, this);
+                Settings.System.HEADS_UP_NOTIFICATION, true, this);
     }
 
     @Override
