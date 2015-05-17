@@ -27,6 +27,12 @@
         android:title="@string/enable_quickboot_title"
         android:summary="@string/enable_quickboot_summary" />
 
+    <com.android.settings.desolation.SystemSettingSwitchPreference
+        android:key="welcome_back_notify"
+        android:title="@string/welcome_back_notification_title"
+        android:summary="@string/welcome_back_notification_summary"
+        android:defaultValue="true" />
+
     <PreferenceScreen
             android:key="local_backup_password"
             android:title="@string/local_backup_password_title"
